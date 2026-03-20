@@ -2,11 +2,11 @@
 
 **DATE:**
 
-**NAME:**
+**NAME:VASANTH S**
 
-**ROLL NO:**
+**ROLL NO:212222110052**
 
-**DEPARTMENT:**
+**DEPARTMENT:Computer Science and Engineering**
 
 ## Aim:
 
@@ -90,12 +90,54 @@ UART transmits and receives data asynchronously, meaning there is no shared cloc
 
 
 ## STM 32 CUBE PROGRAM :
+~~~c
+#include "main.h"
+#include "stdio.h"
+#if defined(__GNUC__)
+#define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
+#endif
+
+UART_HandleTypeDef huart2;
 
 
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+static void MX_USART2_UART_Init(void);
+
+int main(void)
+{
+  
+  HAL_Init();
+
+  
+  SystemClock_Config();
+
+  
+  MX_GPIO_Init();
+  MX_USART2_UART_Init();
+  
+  while (1)
+  {
+      printf("GURUPRASATH\n");
+      printf("212223040053\n");
+      HAL_Delay(500);
+  }
+  
+}
+PUTCHAR_PROTOTYPE
+{
+	HAL_UART_Transmit(&huart2,(uint8_t *)&ch,1,0xFFFF);
+	return ch;
+
+}
+
+~~~
 
 ## Output screen shots of Serial port utility   :
  
- 
+<img width="991" height="752" alt="Screenshot 2026-02-09 143733" src="https://github.com/user-attachments/assets/c3b634a5-0468-4f98-bdd1-e1ad9e0f18c7" />
+
+
  
  
 ## Result :
